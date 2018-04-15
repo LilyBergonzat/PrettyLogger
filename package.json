@@ -1,0 +1,24 @@
+{
+  "name": "pretty-logger",
+  "version": "1.0.0",
+  "description": "A simple tool to create nice and colorful logs",
+  "main": "Logger.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/YannBergonzat/prettylogger"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "color",
+    "colour",
+    "pretty"
+  ],
+  "author": "elianwonhalf",
+  "license": "ISC"
+}
