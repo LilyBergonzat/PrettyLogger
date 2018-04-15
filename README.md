@@ -4,12 +4,12 @@ A simple tool to create nice and colorful logs.
 # Installation
 For pretty much everyone
 ```
-npm install --save pretty_logger
+npm install --save @elian-wonhalf/pretty-logger
 ```
 
 For nerds :]
 ```
-npm i -S pretty_logger
+npm i -S @elian-wonhalf/pretty-logger
 ```
 
 # Usage

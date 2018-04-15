@@ -1,5 +1,5 @@
 {
-  "name": "pretty_logger",
+  "name": "@elian-wonhalf/pretty-logger",
   "version": "1.0.0",
   "description": "A simple tool to create nice and colorful logs",
   "main": "Logger.js",
