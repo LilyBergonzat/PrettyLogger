@@ -4,19 +4,19 @@ A simple tool to create nice and colorful logs.
 # Installation
 For pretty much everyone
 ```
-npm install --save @elian-wonhalf/pretty-logger
+npm install --save @lilywonhalf/pretty-logger
 ```
 
 For nerds :]
 ```
-npm i -S @elian-wonhalf/pretty-logger
+npm i -S @lilywonhalf/pretty-logger
 ```
 
 # Usage
 It's pretty straightforward.
 
 ```js
-var Logger = require("@elian-wonhalf/pretty-logger");
+var Logger = require("@lilywonhalf/pretty-logger");
 
 Logger.info('This is an info log!');
 Logger.error('This is an error log!');
