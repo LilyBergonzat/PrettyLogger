@@ -1,3 +1,14 @@
+/**
+ * @param {Number} n
+ * @param {Number} width
+ * @returns {String}
+ */
+const pad = (n, width) => {
+    n = n.toString();
+
+    return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+};
+
 class LoggerDesigner {
     constructor()
     {
@@ -40,16 +51,5 @@ class LoggerDesigner {
 
 LoggerDesigner.instance = null;
 LoggerDesigner.PREFIX_LENGTH = 40;
-
-/**
- * @param {int} n
- * @param {int} width
- * @returns {String}
- */
-function pad(n, width) {
-    n = n.toString();
-
-    return n.length >= width ? n : [width - n.length + 1].join('0') + n;
-}
 
 module.exports = LoggerDesigner;
