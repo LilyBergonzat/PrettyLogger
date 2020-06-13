@@ -21,6 +21,7 @@ class LoggerDesigner {
         const date = new Date();
         let dateString = date.getFullYear() + '-' + pad(date.getMonth(), 2) + '-' + pad(date.getDate(), 2) + ' ';
         dateString += pad(date.getHours(), 2) + ':' + pad(date.getMinutes(), 2) + ':' + pad(date.getSeconds(), 2);
+        log = log.toString();
 
         let prefix = dateString + ' - ' + level.toUpperCase();
         let logLines = log.split('\n');
