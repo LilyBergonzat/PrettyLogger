@@ -1,3 +1,6 @@
+dist
+node_modules
+
 # IDE generated files
 .idea
 *.iml

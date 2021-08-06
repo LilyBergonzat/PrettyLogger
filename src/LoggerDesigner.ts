@@ -1,33 +1,23 @@
-/**
- * @param {Number} n
- * @param {Number} width
- * @returns {String}
- */
-const pad = (n, width) => {
-    n = n.toString();
+const pad = (n: number, width: number) => {
+    const stringified = n.toString();
 
-    return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+    return stringified.length >= width ? stringified : `${new Array(width).join('0')}${n}`.slice(-width);
 };
 
 class LoggerDesigner {
+    private static instance: LoggerDesigner;
+    private static PREFIX_LENGTH = 40;
+
     constructor()
     {
+        if (LoggerDesigner.instance !== null) {
+            return LoggerDesigner.instance;
+        }
+
         LoggerDesigner.instance = this;
     }
 
-    static getInstance() {
-        if (LoggerDesigner.instance === null) {
-            LoggerDesigner.instance = new LoggerDesigner();
-        }
-
-        return LoggerDesigner.instance;
-    }
-
-    /**
-     * @param {String} log
-     * @param {String} level
-     */
-    design(log, level)
+    public design(log: string, level: string)
     {
         const date = new Date();
         let dateString = date.getFullYear() + '-' + pad(date.getMonth() + 1, 2) + '-' + pad(date.getDate(), 2) + ' ';
@@ -49,7 +39,4 @@ class LoggerDesigner {
     }
 }
 
-LoggerDesigner.instance = null;
-LoggerDesigner.PREFIX_LENGTH = 40;
-
-module.exports = LoggerDesigner;
+export default new LoggerDesigner();

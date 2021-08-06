@@ -1,4 +1,4 @@
-const Logger = require('./Logger');
+import Logger from './Logger';
 
 Logger.info('This is an info log!');
 Logger.error('This is an error log!');
