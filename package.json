@@ -1,6 +1,6 @@
 {
   "name": "@lilywonhalf/pretty-logger",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "A simple tool to create nice and colorful logs",
   "main": "dist/Logger.js",
   "devDependencies": {

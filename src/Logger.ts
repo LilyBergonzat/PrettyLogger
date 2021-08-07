@@ -1,6 +1,6 @@
 import LoggerDesigner from './LoggerDesigner';
 
-export default class Logger {
+export class Logger {
     public static info(log: string)
     {
         console.info(LogStyle.FOREGROUND_GREEN + LoggerDesigner.design(log, LogLevel.INFO) + LogStyle.RESET);
@@ -46,6 +46,8 @@ export default class Logger {
         console.log(' ', element, '');
     }
 }
+
+export default Logger;
 
 enum LogLevel {
     INFO = 'info',
