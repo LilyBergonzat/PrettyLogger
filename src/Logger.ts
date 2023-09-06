@@ -32,6 +32,7 @@ export class Logger {
      */
     public static exception(error: Error) {
         console.error('', LogStyle.BOLD_ON);
+        console.error(LoggerDesigner.design('Exception log', LogLevel.EXCEPTION));
         console.error(`${LogStyle.BACKGROUND_RED}                              `);
         console.error(` Ugh. What... What happenned? ${LogStyle.BACKGROUND_RESET}${LogStyle.RESET} `);
         console.error(`${LogStyle.BACKGROUND_RED}                              ${LogStyle.RESET} `);
@@ -40,6 +41,7 @@ export class Logger {
 
     public static debug(element: any) {
         console.log('', LogStyle.BOLD_ON);
+        console.log(LoggerDesigner.design('Debug log', LogLevel.DEBUG));
         console.log(`${LogStyle.BACKGROUND_GREEN}                                        `);
         console.log(` Wait, I wanna see that more clearly... ${LogStyle.BACKGROUND_RESET}${LogStyle.RESET} `);
         console.log(`${LogStyle.BACKGROUND_GREEN}                                        ${LogStyle.RESET} `);
@@ -53,7 +55,9 @@ enum LogLevel {
     INFO = 'info',
     WARNING = 'warning',
     ERROR = 'error',
-    NOTICE = 'notice'
+    NOTICE = 'notice',
+    EXCEPTION = 'exception',
+    DEBUG = 'debug'
 }
 
 enum LogStyle {
