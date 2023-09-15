@@ -6,7 +6,7 @@ export class Logger {
         console.info(LogStyle.FOREGROUND_GREEN + LoggerDesigner.design(log, LogLevel.INFO) + LogStyle.RESET);
     }
 
-    public static error(log: string)
+    public static error(log: string | Error)
     {
         console.info(LogStyle.FOREGROUND_RED + LoggerDesigner.design(log, LogLevel.ERROR) + LogStyle.RESET);
     }

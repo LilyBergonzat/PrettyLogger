@@ -5,8 +5,10 @@ Logger.error('This is an error log!');
 Logger.warning('This is a warning log!');
 Logger.notice('This is a notice log!');
 
+const errorException = new Error('This is an exception logged with the error method');
 const exception = new Error('This is an exception');
 
+Logger.error(errorException);
 Logger.exception(exception);
 
 // Thanks to Colen from StackOverflow for this one!

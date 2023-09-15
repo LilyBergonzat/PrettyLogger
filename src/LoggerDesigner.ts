@@ -6,7 +6,7 @@ const pad = (n: number, width: number) => {
 
 class LoggerDesigner {
     private static instance: LoggerDesigner;
-    private static PREFIX_LENGTH = 40;
+    private static PREFIX_LENGTH = 35;
 
     constructor()
     {
@@ -17,15 +17,21 @@ class LoggerDesigner {
         LoggerDesigner.instance = this;
     }
 
-    public design(log: string, level: string)
+    public design(log: Error | string, level: string)
     {
+        const error = typeof log === 'string' ? null : log;
+        const message = log.toString();
+
         const date = new Date();
         let dateString = date.getFullYear() + '-' + pad(date.getMonth() + 1, 2) + '-' + pad(date.getDate(), 2) + ' ';
         dateString += pad(date.getHours(), 2) + ':' + pad(date.getMinutes(), 2) + ':' + pad(date.getSeconds(), 2);
-        log = log.toString();
 
         let prefix = dateString + ' - ' + level.toUpperCase();
-        let logLines = log.split('\n');
+        let logLines = message.split('\n');
+
+        if (error && error.stack) {
+            logLines.push(error.stack.split('\n')[1]);
+        }
 
         for (let i = prefix.length; i < LoggerDesigner.PREFIX_LENGTH; i++) {
             prefix += ' ';
@@ -35,7 +41,7 @@ class LoggerDesigner {
             return prefix + ' | ' + line;
         });
 
-        return logLines.join('\n ');
+        return logLines.join('\n');
     }
 }
 
