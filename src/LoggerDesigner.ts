@@ -30,7 +30,13 @@ class LoggerDesigner {
         let logLines = message.split('\n');
 
         if (error && error.stack) {
-            logLines.push(error.stack.split('\n')[1]);
+            const stack = error.stack.split('\n');
+
+            stack.shift();
+
+            const relevantLine = stack.find(line => !line.includes('node_modules') && !line.includes('node:internal'));
+
+            logLines.push(relevantLine ?? stack[0]);
         }
 
         for (let i = prefix.length; i < LoggerDesigner.PREFIX_LENGTH; i++) {
